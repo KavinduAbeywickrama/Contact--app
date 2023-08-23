@@ -23,28 +23,24 @@ function App() {
     setContacts(newContactList);
   };
 
-  useEffect(()=>{
-    const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    if(retriveContacts)setContacts(retriveContacts)
-  },[])
+  useEffect(() => {
+    const retrieveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (retrieveContacts) setContacts(retrieveContacts);
+  }, []);
+  
 
-  useEffect(()=>{
+  useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
-
-  },[contacts])
+  }, [contacts]);
+  
 
   return (
     // <div className ="ui cantainer">
     //   <Router>
     //   <Header/>
     //     <Routes>
-
-    //         <Route path ="/add"  element = {<AddContact/>}/>
-    //         <Route path ="/"  element = {<ContactList/>}/>            
-                
-          
-    //       {/* <AddContact addContactHandler = {addContactHandler}/> */} 
-    //       {/* <ContactList contacts = { contacts} getcontactId ={removeContactHandler}/> */}
+    //         <Route path ="/add" render ={(props) => (<AddContact {...props} addContactHandler = {addContactHandler}/>) }/>
+    //         <Route path ="/"  render = {(props) => (<ContactList {...props} contacts = { contacts} getcontactId ={removeContactHandler}/>)} />          
     //     </Routes>
     //   </Router>            
     // </div>
@@ -57,9 +53,7 @@ function App() {
           <Route path="/" element={<ContactList contacts={contacts} getcontactId={removeContactHandler} />} />
         </Routes>
       </Router>
-    </div>
-
-    
+    </div>       
   );
 }
 
