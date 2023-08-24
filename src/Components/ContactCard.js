@@ -10,7 +10,7 @@ const ContactCard = (props) => {
         <div className = "item" style ={{display:"flex"}}>
             <img className="ui avatar image" src={user} alt = "user" style ={{float:"left"}} />
                 <div className="content">
-                   <Link to={'/contact/${id}'}>
+                   <Link to={`/contact/${id}`}>
                         <div className="header">{name}</div>
                         <div>{email}</div>
                     </Link>

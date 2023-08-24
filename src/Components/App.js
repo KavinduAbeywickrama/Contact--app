@@ -5,7 +5,7 @@ import Header from "./Header"
 import AddContact from "./AddContact"
 import ContactList from "./ContactList"
 import './App.css';
-import ContactDetails from './ContactDetails';
+import ContactDetail from './ContactDetail'
 
 function App() {
   
@@ -52,8 +52,8 @@ function App() {
         <Routes>
           <Route path="/add" element={<AddContact addContactHandler={addContactHandler} />} />
           <Route path="/" element={<ContactList contacts={contacts} getcontactId={removeContactHandler} />} />
-        </Routes>
-        <Route path="/contact/:id" element={<ContactDetails />} />
+          <Route path="/contact/:id" element={<ContactDetail/>} />
+        </Routes>        
       </Router>
     </div>       
   );
