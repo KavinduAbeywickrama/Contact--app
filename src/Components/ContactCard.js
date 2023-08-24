@@ -3,6 +3,7 @@ import user from "../images/user.png";
 import {Link} from "react-router-dom";
 
 
+
 const ContactCard = (props) => {
     const {id,name,email} = props.contact;
     const contact =  props.contact;
@@ -22,10 +23,15 @@ const ContactCard = (props) => {
                         <div>{email}</div>
                     </Link>
                 </div>
-                <i className ="trash alternate outline icon" 
-                style ={{color:"red", marginTop:"5px", paddingLeft:"90%"}}
-                onClick={()=>props.clickHandler(id)}
-                ></i>
+                <div>
+                    <i className ="trash alternate outline icon" style ={{color:"red", marginTop:"5px", paddingLeft:"900px"}} onClick={()=>props.clickHandler(id)}></i>
+                </div>
+
+                <div>
+                    <Link to={{ pathname: `/edit/${encodeURIComponent(stateData)}`}}>
+                    <i className ="edit alternate outline icon" style ={{color:"blue", marginTop:"5px", paddingLeft:"20px"}}></i>
+                    </Link>
+                </div>                
         </div>
     );
 };
