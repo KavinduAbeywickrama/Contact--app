@@ -1,0 +1,19 @@
+{
+  "contacts": [
+    {
+      "name": "nisal mihiranga",
+      "email": "nisal@gmail.com",
+      "id": "f9a1cec1-7d82-493c-9418-d19faae6b6bf"
+    },
+    {
+      "id": "67e6c7c1-3d36-4942-b34a-3ab4115acb31",
+      "name": "kavi",
+      "email": "kavi@gmai.com"
+    },
+    {
+      "id": "d06e749b-7d0c-46b1-80ee-7ae9c3384514",
+      "name": "kavindu",
+      "email": "kavindu@gmail.com"
+    }
+  ]
+}
