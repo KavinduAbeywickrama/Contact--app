@@ -10,10 +10,13 @@ import api from "../api/contacts";
 import EditContact from "./EditContact"; // Adjust the file path as needed
 
 
+
 function App() {
   
   const LOCAL_STORAGE_KEY ="contacts";
   const [contacts, setContacts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
   //Retrive Contacts
   const retrieveContacts = async () => {
@@ -52,6 +55,19 @@ function App() {
     setContacts(newContactList);
   };
 
+
+  const searchHandler = () => {
+    setSearchTerm(searchTerm);
+    if (searchTerm !== "") {
+      const newContactList = contacts.filter((contact) => {
+        return Object.values(contact).join(" ").toLowerCase().includes(searchTerm.toLowerCase());
+      });
+      setSearchResults(newContactList);
+    } else{
+      setSearchResults(contacts);
+    }
+  };
+
  
 
   useEffect(() => {
@@ -71,17 +87,7 @@ function App() {
    // localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
   }, [contacts]);
   
-
   return (
-    // <div className ="ui cantainer">
-    //   <Router>
-    //   <Header/>
-    //     <Routes>
-    //         <Route path ="/add" render ={(props) => (<AddContact {...props} addContactHandler = {addContactHandler}/>) }/>
-    //         <Route path ="/"  render = {(props) => (<ContactList {...props} contacts = { contacts} getcontactId ={removeContactHandler}/>)} />          
-    //     </Routes>
-    //   </Router>            
-    // </div>
 
     <div className="ui container">
       <Header />
@@ -89,7 +95,7 @@ function App() {
         <Routes>
           <Route path="/add" element={<AddContact addContactHandler={addContactHandler} />} />
           <Route path="/edit/:id" element={<EditContact updateContactHandler={updateContactHandler} />} />
-          <Route path="/" element={<ContactList contacts={contacts} getcontactId={removeContactHandler} />} />
+          <Route path="/" element={<ContactList contacts {...searchTerm.length <1 ? contacts : searchResults} getcontactId={removeContactHandler} term={searchTerm} searchKeyword={searchHandler}/>} />
           <Route path="/contact/:id" element={<ContactDetail/>} />
         </Routes>        
       </Router>
