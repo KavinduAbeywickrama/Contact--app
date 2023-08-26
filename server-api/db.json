@@ -1,11 +1,6 @@
 {
   "contacts": [
     {
-      "name": "nisal mihiranga",
-      "email": "nisal@gmail.com",
-      "id": "f9a1cec1-7d82-493c-9418-d19faae6b6bf"
-    },
-    {
       "id": "67e6c7c1-3d36-4942-b34a-3ab4115acb31",
       "name": "kavi",
       "email": "kavi@gmai.com"
@@ -14,6 +9,26 @@
       "id": "d06e749b-7d0c-46b1-80ee-7ae9c3384514",
       "name": "kavindu",
       "email": "kavindu@gmail.com"
+    },
+    {
+      "id": "f8a0d8a3-f9c3-45ee-970b-3cee7288c1b0",
+      "name": "sanu",
+      "email": "sanu@gmail.com"
+    },
+    {
+      "id": "6cee818b-1295-4a35-9eae-21bfdbdd7af0",
+      "name": "sumali",
+      "email": "sumali@gmail.com"
+    },
+    {
+      "id": "91c569cf-1830-48f5-8bda-a60178c0cb4b",
+      "name": "abey",
+      "email": "abey@gmail.com"
+    },
+    {
+      "id": "33e82f75-e7bd-4daa-96af-9354872f6745",
+      "name": "gunathilaka",
+      "email": "gunathilaka@gmail.com"
     }
   ]
 }
